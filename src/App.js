@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Layout, RequireAuth } from './routes/Layout/Layout';
 import ListPage from './routes/ListPage/ListPage';
 import LoginPage from './routes/LoginPage/LoginPage';
@@ -12,6 +13,9 @@ import {
   createBrowserRouter,
 } from 'react-router-dom';
 function App() {
+  useEffect(() => {
+    console.log('REACT_APP_API_URL', process.env.REACT_APP_API_URL);
+  }, []);
   const router = createBrowserRouter([
     {
       path: '/',
