@@ -1,0 +1,110 @@
+.card {
+  display: flex;
+  gap: 20px;
+}
+
+.imageContainer {
+  flex: 2;
+  height: 200px;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.textContainer {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.textContainer img {
+  width: 16px;
+  height: 16px;
+  gap: 10px;
+}
+
+.textContainer .title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #444;
+  transition: all 0.4s ease;
+}
+
+.textContainer .title:hover {
+  color: #000;
+  scale: 1.01;
+}
+
+.textContainer .adderess {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  gap: 5px;
+  color: #888;
+}
+
+.textContainer .price {
+  display: flex;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 5px;
+  border-radius: 5px;
+  width: max-content;
+}
+
+.textContainer .bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.bottom .features {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+.bottom .feature {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icon {
+  border: 1px solid #999;
+  padding: 2px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons :hover {
+  background-color: lightgrey;
+}
+
+@media screen and (max-width: 1366px) {
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 738px) {
+  .imageContainer {
+    display: none;
+  }
+}

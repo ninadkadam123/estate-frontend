@@ -1,0 +1,154 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+nav .left {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 28px;
+}
+
+nav .right {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #fcf5f3;
+  height: 100%;
+}
+
+nav .right .user {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+nav .right .user .profile {
+  padding: 12px 24px;
+  background-color: #fece51;
+  cursor: pointer;
+  border: none;
+  position: relative;
+}
+
+nav .right .user .profile .notification {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav .right .user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+nav .right .register {
+  background-color: #fece51;
+}
+
+nav .right a {
+  padding: 12px 24px;
+  margin: 20px;
+}
+
+nav a {
+  transition: all 0.4s ease;
+}
+
+nav a:hover {
+  scale: 1.05;
+}
+
+.menuIcon {
+  display: none;
+  z-index: 99;
+}
+.menuIcon img {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  background-color: black;
+  color: white;
+  top: 0;
+  right: -50%;
+  height: 100vh;
+  width: 50%;
+  transition: all 1s ease;
+
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.active {
+  right: 0;
+}
+
+@media screen and (max-width: 1366px) {
+}
+
+@media screen and (max-width: 1024px) {
+  .left span {
+    display: none;
+  }
+  .right {
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 738px) {
+  nav a {
+    display: none;
+  }
+
+  .left span {
+    display: initial;
+  }
+
+  .menuIcon {
+    display: inline;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu a {
+    display: initial;
+  }
+
+  nav .right .user span {
+    display: none;
+  }
+}

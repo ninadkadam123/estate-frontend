@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import { Layout, RequireAuth } from './routes/Layout/Layout';
+import ListPage from './routes/ListPage/ListPage';
+import LoginPage from './routes/LoginPage/LoginPage';
+import Profile from './routes/Profile/Profile';
+import ProfileUpdatePage from './routes/ProfileUpdatePage/ProfileUpdatePage';
+import RegisterPage from './routes/Registerpage/RegisterPage';
+import SinglePage from './routes/SinglePage/SinglePage';
 
+import HomePage from './routes/homePage/HomePage';
+import {
+  RouterProvider,
+  createBrowserRouter,
+} from 'react-router-dom';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        {
+          path: '/',
+          element: <HomePage />,
+        },
+        {
+          path: '/list',
+          element: <ListPage />,
+        },
+        {
+          path: '/:id',
+          element: <SinglePage />,
+        },
+
+        {
+          path: '/register',
+          element: <RegisterPage />,
+        },
+        {
+          path: '/login',
+          element: <LoginPage />,
+        },
+      ],
+    },
+    {
+      path: '/',
+      element: <RequireAuth />,
+      children: [
+        {
+          path: '/profile',
+          element: <Profile />,
+        },
+        {
+          path: '/profile/update',
+          element: <ProfileUpdatePage />,
+        },
+      ],
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;
