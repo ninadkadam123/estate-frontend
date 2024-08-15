@@ -9,17 +9,17 @@
   font-size: 24px;
 }
 
-.item {
+.filteritem {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.item label {
+.filteritem label {
   font-size: 10px;
 }
 
-.item select {
+.filteritem select {
   width: 100px;
   padding: 10px;
   border: 1px solid #e0e0e0;
@@ -27,7 +27,7 @@
   font-size: 15px;
 }
 
-.item input {
+.filteritem input {
   width: 100px;
   padding: 10px;
   border: 1px solid #e0e0e0;

@@ -12,6 +12,7 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from 'react-router-dom';
+import NewPostPage from './routes/newPostPage/newPostPage';
 function App() {
   useEffect(() => {
     console.log('REACT_APP_API_URL', process.env.REACT_APP_API_URL);
@@ -55,6 +56,10 @@ function App() {
         {
           path: '/profile/update',
           element: <ProfileUpdatePage />,
+        },
+        {
+          path: '/add',
+          element: <NewPostPage />,
         },
       ],
     },
