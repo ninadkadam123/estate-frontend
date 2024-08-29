@@ -32,7 +32,13 @@
   min-height: 64px;
   gap: 5px;
 }
-
+.searchBar > form > a {
+  flex: 1;
+  background-color: #fece51;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .searchBar form input {
   border: none;
   padding: 0px 10px;
@@ -40,14 +46,13 @@
   padding: 20px;
 }
 
-.searchBar form button {
+.searchBar > form > a > button {
   border: none;
   cursor: pointer;
   background-color: #fece51;
-  flex: 1;
 }
 
-.searchBar form button img {
+.searchBar > form > a > button > img {
   width: 24px;
   height: 24px;
 }

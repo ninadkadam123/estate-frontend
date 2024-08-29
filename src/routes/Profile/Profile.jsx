@@ -1,12 +1,18 @@
-import React, { useContext } from 'react';
+import React, { Suspense, useContext } from 'react';
 import './Profile.css';
 import List from '../../components/List/List';
 import Chat from '../../components/Chat/Chat';
 import apiRequest from '../../components/lib/apiRequest';
-import { Link, useNavigate } from 'react-router-dom';
+import {
+  Await,
+  Link,
+  useLoaderData,
+  useNavigate,
+} from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 
 export default function Profile() {
+  const data = useLoaderData();
   const navigate = useNavigate();
   const { updateUser, currentUser } = useContext(AuthContext);
   const handleLogout = async () => {
@@ -53,16 +59,42 @@ export default function Profile() {
               <button>Create New Post</button>
             </Link>
           </div>
-          <List />
+          <Suspense fallback={<p>Loading....</p>}>
+            <Await
+              resolve={data.postResponse}
+              errorElement={<p>Error loading post.... </p>}
+            >
+              {(postResponse) => (
+                <List posts={postResponse.data.userPosts} />
+              )}
+            </Await>
+          </Suspense>
+
           <div className="title">
             <h1>Saved List</h1>
           </div>
-          <List />
+          <Suspense fallback={<p>Loading....</p>}>
+            <Await
+              resolve={data.postResponse}
+              errorElement={<p>Error loading post.... </p>}
+            >
+              {(postResponse) => (
+                <List posts={postResponse.data.savedPosts} />
+              )}
+            </Await>
+          </Suspense>
         </div>
       </div>
       <div className="chatContainer">
         <div className="wrapper">
-          <Chat />
+          <Suspense fallback={<p>Loading....</p>}>
+            <Await
+              resolve={data.chatResponse}
+              errorElement={<p>Error loading post.... </p>}
+            >
+              {(chatResponse) => <Chat chats={chatResponse.data} />}
+            </Await>
+          </Suspense>
         </div>
       </div>
     </div>

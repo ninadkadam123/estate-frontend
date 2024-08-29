@@ -13,7 +13,11 @@ import {
   createBrowserRouter,
 } from 'react-router-dom';
 import NewPostPage from './routes/newPostPage/newPostPage';
-import { singlePageLoader } from './components/lib/loaders';
+import {
+  listPageLoader,
+  profilePageLoader,
+  singlePageLoader,
+} from './components/lib/loaders';
 function App() {
   useEffect(() => {
     console.log('REACT_APP_API_URL', process.env.REACT_APP_API_URL);
@@ -30,6 +34,7 @@ function App() {
         {
           path: '/list',
           element: <ListPage />,
+          loader: listPageLoader,
         },
         {
           path: '/:id',
@@ -54,6 +59,7 @@ function App() {
         {
           path: '/profile',
           element: <Profile />,
+          loader: profilePageLoader,
         },
         {
           path: '/profile/update',

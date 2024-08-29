@@ -6,28 +6,28 @@
   flex: 3;
   overflow: scroll;
 }
-.wrapper {
+.formContainer > .wrapper {
   margin: 30px 50px 100px 0px;
 }
-.wrapper form {
+.formContainer > .wrapper > form {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.wrapper .item {
+.formContainer > .wrapper > form > .item {
   display: flex;
   width: 30%;
   flex-direction: column;
   gap: 5px;
 }
-.wrapper .item > input {
+.formContainer > .wrapper > form > .item > input {
   padding: 20px;
   border-radius: 5px;
   border: 1px solid gray;
 }
-.wrapper .item > select {
+.formContainer > .wrapper > form > .item > select {
   padding: 19px;
   border-radius: 5px;
 }

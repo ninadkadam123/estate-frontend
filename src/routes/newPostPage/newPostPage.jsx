@@ -110,11 +110,23 @@ function NewPostPage() {
             </div>
             <div className="item">
               <label htmlFor="latitude">Latitude</label>
-              <input id="latitude" name="latitude" type="text" />
+              <input
+                id="latitude"
+                name="latitude"
+                type="text"
+                min={0}
+                max={90}
+              />
             </div>
             <div className="item">
               <label htmlFor="longitude">Longitude</label>
-              <input id="longitude" name="longitude" type="text" />
+              <input
+                id="longitude"
+                name="longitude"
+                type="text"
+                min={-180}
+                max={180}
+              />
             </div>
             <div className="item">
               <label htmlFor="type">Type</label>
