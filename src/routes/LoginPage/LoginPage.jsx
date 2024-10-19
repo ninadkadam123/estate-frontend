@@ -28,8 +28,10 @@ export default function LoginPage() {
         password,
       });
 
-      updateUser(res.data);
-      navigate('/');
+      if (res) {
+        updateUser(res.data);
+        navigate('/');
+      }
     } catch (error) {
       setError(error.response.data.message);
     } finally {
